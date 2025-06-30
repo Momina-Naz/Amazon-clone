@@ -57,6 +57,8 @@ nav {
   justify-content: space-evenly;
   width: 628px;
   height: 40px;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
   border-radius: 4px;
   border: none;
 }
@@ -89,7 +91,9 @@ nav {
   border-radius: 0 4px 4px 0;
   background-color: #febd68;
 }
-
+.nav-at-small {
+  display: none;
+}
 /*Box 4 & 5*/
 span {
   font-size: 0.75rem;
@@ -158,18 +162,19 @@ span {
 
 /*Shop*/
 .shop {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0px 10px;
   background-color: #e2e7e6;
 }
 
 .box {
-  width: 23%;
+  grid-column: span 1;
   height: 400px;
   background-color: #fff;
   padding: 20px 0px 15px;
-  margin-top: 25px;
+  margin: 2rem 1rem;
 }
 
 .box-content {
@@ -197,6 +202,7 @@ span {
 .sub-box {
   height: 145px;
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   border: 1px solid rgb(225, 223, 223);
 }
@@ -271,4 +277,116 @@ ul a {
 
 .copyright {
   padding-top: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav {
+    height: 70px;
+  }
+  .nav-search {
+    width: 250px;
+    height: 40px;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+  }
+  .panel {
+    height: 50px;
+    padding-top: 0.6rem;
+  }
+  .panel-ops p {
+    display: inline-block;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+  .hero {
+    height: 300px;
+  }
+  .hero-msg {
+    height: 50px;
+    font-size: 1rem;
+    margin-bottom: 35px;
+  }
+  .shop {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0px 0px;
+  }
+  .box {
+    height: 400px;
+    margin-bottom: 3px;
+  }
+}
+@media screen and (max-width: 768px) {
+  nav {
+    display: none;
+  }
+  .nav-at-small {
+    padding: 1rem;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-at-small-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 0.4rem;
+    width: 100%;
+  }
+  .nav-at-small > .nav-search {
+    width: 100%;
+    margin: 0rem 1rem;
+  }
+
+  .panel-ops {
+    overflow: auto;
+    white-space: nowrap;
+  }
+  .hero {
+    height: 240px;
+    background-size: 150%;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+  .hero-msg {
+    height: 50px;
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 0.6rem;
+    margin: 0px 2rem;
+    margin-bottom: 35px;
+  }
+  .shop {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    margin: 0px;
+    gap: 0px 0px;
+  }
+
+  .box-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .foot-panel2 {
+    background-color: #222f3d;
+    color: #fff;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .foot-panel2 > ul {
+    margin: 1.5rem;
+  }
+}
+@media screen and (max-width: 330px) {
+  .hero {
+    height: 240px;
+    background-size: 160%;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
 }
